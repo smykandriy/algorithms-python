@@ -16,17 +16,17 @@ def measure_execution_time(function):
 
 
 @measure_execution_time
-def get_minimum_sorting_range(int_list: list[int]) -> tuple[int, int]:
-    index_range = len(int_list) - 1
+def get_minimum_sorting_range(list_of_integers: list[int]) -> tuple[int, int]:
+    index_range = len(list_of_integers) - 1
     first_unsorted_index = last_unsorted_index = -1
 
     if index_range > 1:
         for index in range(index_range):
-            if int_list[index] >= int_list[index + 1]:
+            if list_of_integers[index] > min(list_of_integers[index:]):
                 first_unsorted_index = index
                 break
         for index in range(index_range, 0, -1):
-            if int_list[index] <= int_list[index - 1]:
+            if list_of_integers[index] < max(list_of_integers[0:index]):
                 last_unsorted_index = index
                 break
 

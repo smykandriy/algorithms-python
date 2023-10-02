@@ -21,3 +21,10 @@ class TestSortingRange(unittest.TestCase):
         actual_result = get_minimum_sorting_range([1])
 
         self.assertEqual(expected_result, actual_result)
+
+    def test_list(self):
+        list_to_sort = [1, 2, 3, 8, 5, 4, 7, 10, 11]
+        expected_result = (3, 6)
+        actual_result = get_minimum_sorting_range(list_to_sort)
+
+        self.assertEqual(expected_result, actual_result)
